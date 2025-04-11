@@ -1,0 +1,22 @@
+<div class="container">
+    <!-- h1 is the Difficulty Selection -->
+    <h1>{{this.quizManager.difficulty}}</h1>
+    <h2>Current Score: {{this.quizManager.score}}</h2>
+    <div class="question-section">
+      <!-- Display the question text here -->
+      <p>{{question.getQuestionText()}}</p>
+      <input type="number" step="1" [(ngModel)]="userAnswer" />
+    </div>
+    <div class="button-container">
+      <!-- Buttons -->
+      <button class="quiz-button" (click)="skipQuestion()">Skip Question</button>
+      <button class="quiz-button" (click)="submitAnswer()">Submit Answer</button>
+      <!-- End Quiz Button takes user to Scoreboard-->
+      <button class="quiz-button" (click)="endQuiz()">End Quiz</button>
+    </div>
+    <div *ngIf="resultMessage" class="result-message">
+      <!-- Display the result message -->
+      <p>{{ resultMessage }}</p>
+    </div>
+  </div>
+  

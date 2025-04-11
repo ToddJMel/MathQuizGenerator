@@ -1,19 +1,12 @@
 
-<style>
-  main {
-    width: 100%;
-    min-height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 1rem;
-    box-sizing: inherit;
-    position: relative;
-  }
-</style>
+<header>
+  <h1>{{ title }}</h1>
+</header>
 
-<main class="main">
-<h1> This will be our Math Quiz Generator</h1>
+<main>
+  <router-outlet></router-outlet>
 </main>
 
-<router-outlet />
+<footer>
+  Todd Melancon & Sude Gundogan
+</footer>
