@@ -27,6 +27,14 @@
     width: 100%; /* Ensure it takes up full width */
     height: 100%; /* Ensure it fills the available space */
   }
+
+  .user-answer {
+    flex-grow: 1; /* Take up remaining space between question and buttons */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 100px; /* Add some space below user input */
+  }
   
   .button-container {
     display: flex;

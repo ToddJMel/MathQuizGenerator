@@ -1,5 +1,11 @@
 <div class="container">
     <h1>Try a Math Quiz</h1>
+    <div class="rules-button-container">
+    <button mat-stroked-button color="primary" (click)="openRulesDialog()">
+        <mat-icon>help_outline</mat-icon>
+        Quiz Rules
+      </button>          
+      </div>
     <div class="button-container">
         <button class="quiz-button" [routerLink]="['/quiz', 'easy']">Easy</button>
         <button class="quiz-button" [routerLink]="['/quiz', 'medium']">Medium</button>
