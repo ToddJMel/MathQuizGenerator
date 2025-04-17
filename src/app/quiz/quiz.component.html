@@ -16,10 +16,10 @@
     </div>
     <div class="button-container">
       <!-- Buttons -->
-      <button class="quiz-button" (click)="skipQuestion()">Skip Question</button>
-      <button class="quiz-button" (click)="submitAnswer()">Submit Answer</button>
+      <button class="quiz-button" [disabled]="isSubmitting" (click)="skipQuestion()">Skip Question</button>
+      <button class="quiz-button" [disabled]="isSubmitting" (click)="submitAnswer()">Submit Answer</button>
       <!-- End Quiz Button takes user to Scoreboard through the endQuiz() method -->
-      <button class="quiz-button" (click)="endQuiz()">End Quiz</button>
+      <button class="quiz-button" [disabled]="isSubmitting" (click)="endQuiz()">End Quiz</button>
     </div>
   </div>
   
