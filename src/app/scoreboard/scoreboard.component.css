@@ -1,0 +1,88 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align elements to the top */
+    align-items: center;
+    height: 100vh; /* Full height of the viewport */
+    text-align: center;
+  }
+  
+  h1 {
+    margin-bottom: 20px;
+    font-size: 48px;
+    font-weight: bold;
+    background: linear-gradient(to right, #ff7e5f, #feb47b);
+    -webkit-background-clip: text;
+    color: transparent;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    gap: 15px; /* Space between buttons */
+    margin-bottom: 20px; /* Add some space below buttons */
+  }
+  
+  .scoreboard-button {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .scoreboard-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .scoreboard-container {
+    padding: 1rem;
+    max-width: 500px;
+    margin: auto;
+    background-color: #f9f9f9;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .score-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .score-list li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #ccc;
+    font-size: 1.1rem;
+  }
+  
+  .score-list li:last-child {
+    border-bottom: none;
+  }
+  
+  .score-list li.latest {
+    background-color: #e0ffe0;
+    font-weight: bold;
+  }
+  
+  .score-list li.previous {
+    background-color: #fff7e6;
+    font-weight: 500;
+  }
+  
+  .label {
+    color: #555;
+  }
+  
+  .score {
+    color: #222;
+  }
+  

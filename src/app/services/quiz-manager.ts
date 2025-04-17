@@ -13,7 +13,7 @@ export class QuizManager {
     let operand2 = this.randomInt(1, 10);
     let operator = '+';
     
-    //Changes the available operators and number ranges for different difficulties
+    //Changes the available operators and randomly pick an index of the array of operators for different difficulties
     if (this.difficulty === 'medium') {
       operator = ['+', '-', '*'][this.randomInt(0, 2)];
     } else if (this.difficulty === 'hard') {
@@ -61,7 +61,7 @@ export class QuizManager {
       case '+': return a + b;
       case '-': return a - b;
       case '*': return a * b;
-      case '/': return Math.floor(a / b); //Keep integer
+      case '/': return Math.round((a / b) * 100) / 100; //Round half up (like normal math rounding) to two decimals
       default: return 0;
     }
   }

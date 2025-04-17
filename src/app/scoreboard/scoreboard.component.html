@@ -1,6 +1,35 @@
-<div>
-    <h1>Scoreboard</h1>
-</div>
+<div class="container">
 <div *ngIf="message">
-<h2>{{message}}</h2>
+    <h2>{{message}}</h2>
+    </div>
+    <div class="scoreboard-container">
+        <h1>Scoreboard</h1>
+        <!-- If scores is empty, populate the scoreboard container with this -->
+        <ul class="score-list">
+          <li *ngIf="scores.length === 0">
+            <h2>No quizzes taken yet!</h2>
+          </li>
+<!-- Creates a list item for each quiz score in scores with last item in scores being labeled 'Latest Quiz' b/c scores are pushed to array in localStorage, 
+then 'Previous Quiz', then every quiz after is just 'x Quizzes Ago' -->
+             <li
+            *ngFor="let score of scores; let i = index"
+            [class.latest]="i === scores.length - 1"
+            [class.previous]="i === scores.length - 2"
+          >
+            <span class="label">
+              {{
+                i === scores.length - 1 ? 'Latest Quiz' :
+                i === scores.length - 2 ? 'Previous Quiz' :
+                (scores.length - i) + ' Quizzes Ago'
+              }}:
+            </span>
+            <span class="score">{{ score }}</span>
+          </li>
+        </ul>
+      </div>
+      
+<div class="button-container">
+    <button class="scoreboard-button" (click)="clearScores()">Clear All Scores</button>
+    <button class="scoreboard-button" [routerLink]="['/']">Go to Home</button>
+</div>
 </div>
