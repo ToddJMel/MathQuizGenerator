@@ -60,9 +60,9 @@ export class QuizComponent implements OnInit {
   //Subtracts 1 from user score for skipping, and loads a new question
   skipQuestion() {
     this.isSubmitting = true;
+    this.resultMessage = "Skipping...";
     setTimeout(() => {
       this.quizManager.score--;
-      this.resultMessage = "Skipping...";
       this.loadQuestion();
       this.isSubmitting = false; //Re-enable buttons
     }, 1000);//1 second delay before loading next question
