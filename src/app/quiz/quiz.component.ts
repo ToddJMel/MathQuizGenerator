@@ -61,13 +61,19 @@ export class QuizComponent implements OnInit {
 
   //Subtracts 1 from user score for skipping, and loads a new question
   skipQuestion() {
+    if (this.isSubmitting) return;
+    this.isSubmitting = true;
     this.quizManager.score--;
     this.loadQuestion();
+    this.isSubmitting = false;
   }
 
   //Ends the quiz, saving the score to localStorage
   endQuiz() {
+    if (this.isSubmitting) return;
+    this.isSubmitting = true;
     ScoreManager.getInstance().saveScore(this.quizManager.getScore());
+    this.isSubmitting = false;
     this.router.navigate(['scoreboard'], { queryParams: { message: 'Game Over!' }})
   }
 }
