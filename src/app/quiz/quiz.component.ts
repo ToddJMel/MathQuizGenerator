@@ -64,8 +64,10 @@ export class QuizComponent implements OnInit {
     if (this.isSubmitting) return;
     this.isSubmitting = true;
     this.quizManager.score--;
-    this.loadQuestion();
-    this.isSubmitting = false;
+    setTimeout(() => {
+      this.loadQuestion();
+      this.isSubmitting = false; //Re-enable buttons
+    }, 1000);//1 second delay before loading next question
   }
 
   //Ends the quiz, saving the score to localStorage
