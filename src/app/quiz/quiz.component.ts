@@ -38,9 +38,7 @@ export class QuizComponent implements OnInit {
   }
 
   //Uses QuizManager Class to ValidateAnswer on userAnswer and provides Correct or Wrong feedback. Resets userAnswer to 0 and has a timeout to reload Question
-  submitAnswer() {
-    if (this.isSubmitting) return; //Prevent spamming the Submit Answer Button
-  
+  submitAnswer() {  
     this.isSubmitting = true; //Block buttons
     const correct = this.quizManager.validateAnswer(this.userAnswer);
     this.resultMessage = correct ? 'Correct!' : 'Wrong!';
@@ -61,7 +59,6 @@ export class QuizComponent implements OnInit {
 
   //Subtracts 1 from user score for skipping, and loads a new question
   skipQuestion() {
-    if (this.isSubmitting) return;
     this.isSubmitting = true;
     this.quizManager.score--;
     setTimeout(() => {
@@ -72,7 +69,6 @@ export class QuizComponent implements OnInit {
 
   //Ends the quiz, saving the score to localStorage
   endQuiz() {
-    if (this.isSubmitting) return;
     this.isSubmitting = true;
     ScoreManager.getInstance().saveScore(this.quizManager.getScore());
     this.isSubmitting = false;
