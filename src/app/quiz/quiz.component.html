@@ -1,25 +1,29 @@
 <div class="container">
-    <!-- h1 is the Difficulty Selection -->
-    <h1>{{this.quizManager.difficulty}}</h1>
-    <h2>Current Score: {{this.quizManager.score}}</h2>
-    <div class="question-section">
-      <!-- Display the question text -->
-      <p>{{question.getQuestionText()}}</p>
-    </div>
-    <div class = "user-answer">
-      <p>Answer: </p>
-      <input type="number" step="1" [(ngModel)]="userAnswer" />
-    </div>
-    <div *ngIf="resultMessage" class="result-message">
-      <!-- Display the result message (Correct!, Wrong!, or Three Strikes, You're Out!) -->
-      <p>{{ resultMessage }}</p>
-    </div>
-    <div class="button-container">
-      <!-- Buttons -->
-      <button class="quiz-button" [disabled]="isSubmitting" (click)="skipQuestion()">Skip Question</button>
-      <button class="quiz-button" [disabled]="isSubmitting" (click)="submitAnswer()">Submit Answer</button>
-      <!-- End Quiz Button takes user to Scoreboard through the endQuiz() method -->
-      <button class="quiz-button" [disabled]="isSubmitting" (click)="endQuiz()">End Quiz</button>
-    </div>
+  <!-- Difficulty Level Display -->
+  <h1>{{ this.quizManager.difficulty }}</h1>
+  <h2>Current Score: {{ this.quizManager.score }}</h2>
+
+  <!-- Flashcard-style question display -->
+  <div class="question-section">
+    <p>{{ question.getQuestionText() }}</p>
   </div>
-  
+
+  <!-- User answer input section -->
+  <div class="user-answer">
+    <p>Answer: </p>
+    <input type="number" step="1" [(ngModel)]="userAnswer" />
+  </div>
+
+  <!-- Result Message (Correct!, Wrong!, or Three Strikes, You're Out!) -->
+  <div *ngIf="resultMessage" class="result-message">
+    <p>{{ resultMessage }}</p>
+  </div>
+
+  <!-- Buttons -->
+  <div class="button-container">
+    <button class="quiz-button" [disabled]="isSubmitting" (click)="skipQuestion()">Skip Question</button>
+    <button class="quiz-button" [disabled]="isSubmitting" (click)="submitAnswer()">Submit Answer</button>
+    <!-- End Quiz Button takes user to Scoreboard through the endQuiz() method -->
+    <button class="quiz-button" [disabled]="isSubmitting" (click)="endQuiz()">End Quiz</button>
+  </div>
+</div>

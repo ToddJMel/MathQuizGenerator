@@ -1,88 +1,100 @@
+/* Full container for the scoreboard */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align elements to the top */
-    align-items: center;
-    height: 100vh; /* Full height of the viewport */
-    text-align: center;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    font-size: 48px;
-    font-weight: bold;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    text-transform: uppercase;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 20px;
+  background-color: #f8f9fa; /* Subtle background color */
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+}
 
+/* Scoreboard title */
+.scoreboard-container h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+  color: #343a40;
+}
+
+/* Score list styling */
+.score-list {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  max-width: 600px; /* Max width for a cleaner look */
+  text-align: left;
+}
+
+.score-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.score-list li.latest {
+  background-color: #28a745; /* Green for the latest quiz */
+  color: white;
+}
+
+.score-list li.previous {
+  background-color: #ffc107; /* Yellow for the previous quiz */
+  color: white;
+}
+
+.score-list li .label {
+  font-weight: bold;
+  color: #495057;
+}
+
+.score-list li .score {
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* If there are no scores */
+.score-list li h2 {
+  color: #dc3545; /* Red message if no quizzes are taken */
+  font-size: 22px;
+  text-align: center;
+}
+
+/* Button container with proper spacing and styling */
 .button-container {
-    display: flex;
-    flex-direction: row;
-    gap: 15px; /* Space between buttons */
-    margin-bottom: 20px; /* Add some space below buttons */
-  }
-  
-  .scoreboard-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  .scoreboard-button:hover {
-    background-color: #0056b3;
-  }
-  
-  .scoreboard-container {
-    padding: 1rem;
-    max-width: 500px;
-    margin: auto;
-    background-color: #f9f9f9;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  }
-  
-  .score-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  .score-list li {
-    display: flex;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    border-bottom: 1px solid #ccc;
-    font-size: 1.1rem;
-  }
-  
-  .score-list li:last-child {
-    border-bottom: none;
-  }
-  
-  .score-list li.latest {
-    background-color: #e0ffe0;
-    font-weight: bold;
-  }
-  
-  .score-list li.previous {
-    background-color: #fff7e6;
-    font-weight: 500;
-  }
-  
-  .label {
-    color: #555;
-  }
-  
-  .score {
-    color: #222;
-  }
-  
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 40px;
+}
+
+.scoreboard-button {
+  padding: 12px 25px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.scoreboard-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.scoreboard-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}

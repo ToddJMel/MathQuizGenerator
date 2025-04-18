@@ -1,60 +1,210 @@
+/* Full container */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start; /* Align elements to the top */
-    align-items: center;
-    height: 100vh; /* Full height of the viewport */
-    text-align: center;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align elements to the top */
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  background-color: #f4f6f9; /* Subtle background color for better contrast */
+  font-family: 'Poppins', sans-serif;
+  padding: 10px; /* Padding added for smaller devices */
+  box-sizing: border-box;
+}
+
+/* Title styling with gradient effect */
+h1 {
+  margin-bottom: 10px;
+  font-size: 48px;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff7e5f, #feb47b);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Score styling */
+h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Flashcard-style question section */
+.question-section {
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 30%; /* Gives a flashcard effect */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.question-section p {
+  font-size: 24px;
+  color: #555;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* User answer box with bigger input */
+.user-answer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+.user-answer p {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.user-answer input {
+  width: 250px;
+  padding: 12px;
+  font-size: 18px;
+  border: 2px solid #007bff;
+  border-radius: 8px;
+  margin-top: 10px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.user-answer input:focus {
+  border-color: #0056b3;
+}
+
+/* Result message */
+.result-message {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #007bff;
+}
+
+.result-message p {
+  margin: 0;
+}
+
+/* Button container with spacing and styling */
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 30px;
+  flex-wrap: wrap; /* Ensure buttons wrap on smaller screens */
+}
+
+/* Each quiz button */
+.quiz-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
+}
+
+.quiz-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* End Quiz Button with special styling */
+.quiz-button:last-child {
+  background-color: #dc3545;
+}
+
+.quiz-button:last-child:hover {
+  background-color: #c82333;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust title font size for smaller screens */
   h1 {
+    font-size: 36px;
     margin-bottom: 20px;
-    font-size: 48px;
-    font-weight: bold;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .question-section {
-    flex-grow: 1; /* Take up remaining space between header and buttons */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%; /* Ensure it takes up full width */
-    height: 100%; /* Ensure it fills the available space */
   }
 
-  .user-answer {
-    flex-grow: 1; /* Take up remaining space between question and buttons */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 100px; /* Add some space below user input */
+  /* Adjust question section height */
+  .question-section {
+    height: 25%; /* Adjust the height for better fit on small screens */
   }
-  
-  .button-container {
-    display: flex;
-    flex-direction: row;
-    gap: 15px; /* Space between buttons */
-    margin-bottom: 20px; /* Add some space below buttons */
+
+  /* Adjust the user answer input size for mobile */
+  .user-answer input {
+    width: 200px;
+    font-size: 16px;
+    padding: 10px;
   }
-  
+
+  /* Reduce font size for smaller screens */
+  .result-message {
+    font-size: 16px;
+  }
+
+  /* Adjust button size and spacing for mobile */
   .quiz-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    padding: 12px 24px;
   }
-  
-  .quiz-button:hover {
-    background-color: #0056b3;
+
+  .button-container {
+    gap: 10px;
   }
-  
+}
+
+@media (max-width: 480px) {
+  /* Further adjustments for small screens like phones */
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+
+  .question-section {
+    height: 20%; /* Further reduce height for flashcard effect on very small screens */
+    padding: 20px;
+  }
+
+  /* Smaller input box for very small screens */
+  .user-answer input {
+    width: 180px;
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  /* Smaller button sizes for phones */
+  .quiz-button {
+    font-size: 14px;
+    padding: 10px 20px;
+  }
+
+  /* Adjust button container gap */
+  .button-container {
+    gap: 8px;
+  }
+}

@@ -1,48 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
+/* Wrapper to center content on screen */
+.full-page-wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to right, #4facfe, #00f2fe);
+  font-family: 'Poppins', sans-serif;
+  padding: 20px; /* Added padding for smaller screens */
+  box-sizing: border-box;
+}
+
+/* Quiz card styling */
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* Full height of the viewport */
-    text-align: center;
-  }
-  
-  h1 {
-    margin-bottom: 20px;
-    font-size: 48px;
-    font-weight: bold;
-    background: linear-gradient(to right, #ff7e5f, #feb47b);
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    text-align: center;
-    text-transform: uppercase;
-  }
-  
-  .rules-button-container{
-    display: flex;
-    margin-bottom: 50px;
+  background-color: #ffffffdd;
+  padding: 40px 60px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  max-width: 400px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Header title */
+h1 {
+  margin-bottom: 30px;
+  font-size: 36px;
+  font-weight: 700;
+  background: linear-gradient(to right, #ff512f, #dd2476);
+  -webkit-background-clip: text;
+  color: transparent;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  text-transform: uppercase;
+}
+
+/* Rules button section */
+.rules-button-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.rules-button-container button {
+  font-weight: 600;
+  border-radius: 50px;
+  padding: 10px 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  background-color: #ffffff;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rules-button-container button:hover {
+  transform: scale(1.05);
+  background-color: #e3f2fd;
+}
+
+/* Quiz buttons section */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Each quiz button */
+.quiz-button {
+  padding: 15px 0;
+  font-size: 18px;
+  background: linear-gradient(135deg, #36d1dc, #5b86e5);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.quiz-button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  /* Adjust container padding for smaller screens */
+  .container {
+    padding: 20px 30px;
+    max-width: 100%; /* Allow full width on smaller screens */
   }
 
-  .button-container {
-    display: flex;
-    flex-direction: column;
-    gap: 15px; /* Space between buttons */
+  /* Adjust h1 font size for mobile screens */
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
   }
-  
+
+  /* Adjust quiz button size for mobile */
   .quiz-button {
-    padding: 15px 30px;
-    font-size: 18px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+    font-size: 16px;
+    padding: 12px 0;
   }
-  
-  .quiz-button:hover {
-    background-color: #0056b3;
+
+  /* Adjust button container to be more spaced out */
+  .button-container {
+    gap: 15px;
   }
-  
+
+  /* Make the rules button smaller and more compact on mobile */
+  .rules-button-container button {
+    font-size: 14px;
+    padding: 8px 16px;
+  }
+}
+
+/* Extra small screen adjustments */
+@media (max-width: 480px) {
+  /* Further decrease the font size and spacing */
+  .container {
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+  }
+
+  .quiz-button {
+    font-size: 14px;
+    padding: 10px 0;
+  }
+
+  .rules-button-container button {
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
